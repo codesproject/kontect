@@ -5,23 +5,43 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useState } from "react";
+import { flexbox } from "@mui/system";
+import Modalpop from "./modal";
 
-function Cont() {
+
+function Cont(props) {
+
+    const[clicks, setClicks] = useState("Species")
+
+    function handleClick() {
+        setClicks(+"Clicks added value")
+        }
+
   return (
     <Card sx={{ maxWidth: 375 }}>
       <CardMedia component="img" height="140" image={img} alt="green iguana" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+           {clicks}
         </Typography>
         <Typography variant="" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
           species, ranging across all continents except Antarctica
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="medium" variant="contained" color="primary">Share</Button>
-        <Button size="medium" variant="outlined" color="primary">Learn More</Button>
+      <CardActions sx={{display: flexbox, justifyContent: 'space-between'}}>
+        <Button onClick={handleClick} size="medium" variant={props.btnVar} color={props.btnColor}>
+          {props.btn01}
+        </Button>
+        <Button
+          sx={{ fontWeight: 500 }}
+          size="medium"
+          variant="contained"
+          color={props.btn2Color}
+        >
+          Learn 
+        </Button>
+        <Modalpop />
       </CardActions>
     </Card>
   );
