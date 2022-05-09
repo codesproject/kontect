@@ -1,15 +1,16 @@
 {
   "files": {
     "main.css": "/kontect/static/css/main.073c9b0a.css",
-    "main.js": "/kontect/static/js/main.d6b1f2b4.js",
+    "main.js": "/kontect/static/js/main.e88d681c.js",
     "static/js/787.b210fd6f.chunk.js": "/kontect/static/js/787.b210fd6f.chunk.js",
+    "static/media/paella.jpg": "/kontect/static/media/paella.04bca6ffd44aaec996c0.jpg",
     "index.html": "/kontect/index.html",
     "main.073c9b0a.css.map": "/kontect/static/css/main.073c9b0a.css.map",
-    "main.d6b1f2b4.js.map": "/kontect/static/js/main.d6b1f2b4.js.map",
+    "main.e88d681c.js.map": "/kontect/static/js/main.e88d681c.js.map",
     "787.b210fd6f.chunk.js.map": "/kontect/static/js/787.b210fd6f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.d6b1f2b4.js"
+    "static/js/main.e88d681c.js"
   ]
 }
