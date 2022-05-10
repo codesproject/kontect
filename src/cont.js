@@ -9,28 +9,31 @@ import { useState } from "react";
 import { flexbox } from "@mui/system";
 import Modalpop from "./modal";
 
-
 function Cont(props) {
+  const [clicks, setClicks] = useState("Species");
 
-    const[clicks, setClicks] = useState("Species")
-
-    function handleClick() {
-        setClicks(+"Clicks added value")
-        }
+  function handleClick() {
+    setClicks(+"Clicks added value");
+  }
 
   return (
     <Card sx={{ maxWidth: 375 }}>
       <CardMedia component="img" height="140" image={img} alt="green iguana" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-           {clicks}
+          {clicks}
         </Typography>
         <Typography variant="" color="text.secondary">
           species, ranging across all continents except Antarctica
         </Typography>
       </CardContent>
-      <CardActions sx={{display: flexbox, justifyContent: 'space-between'}}>
-        <Button onClick={handleClick} size="medium" variant={props.btnVar} color={props.btnColor}>
+      <CardActions sx={{ display: flexbox, justifyContent: "space-between" }}>
+        <Button
+          onClick={handleClick}
+          size="medium"
+          variant={props.btnVar}
+          color={props.btnColor}
+        >
           {props.btn01}
         </Button>
         <Button
@@ -39,9 +42,13 @@ function Cont(props) {
           variant="contained"
           color={props.btn2Color}
         >
-          Learn 
+          Learn
         </Button>
-        <Modalpop />
+        <Modalpop
+          modalBtn={props.btn3}
+          MyContent={props.MContent}
+          ModalContHandler1={props.ModalContMn}
+        />
       </CardActions>
     </Card>
   );
