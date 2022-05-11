@@ -19,8 +19,11 @@ const style = {
 
 function Modalpop(props) {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
+  function handleOpen() { setOpen(true) }
+
+  function handleClose() { setOpen(false) }
+
   return (
     <div>
       <Button variant="outlined" onClick={handleOpen}>

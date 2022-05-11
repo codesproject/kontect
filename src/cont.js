@@ -11,9 +11,10 @@ import Modalpop from "./modal";
 
 function Cont(props) {
   const [clicks, setClicks] = useState("Species");
+  const [Numb, Setnumb] = useState("  A new receipe")
 
   function handleClick() {
-    setClicks(+"Clicks added value");
+    setClicks ( Numb );
   }
 
   return (

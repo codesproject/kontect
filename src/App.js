@@ -26,7 +26,7 @@ function App(props) {
         <Grid
           container
           spacing={2}
-          sx={{ margin: "auto", justifyContent: "center" }}
+          sx={{ margin: "auto", justifyContent: "center", display: {sm: 'flex', md: 'flex'} }}
         >
           <Grid item xs={4}>
             <Cont
