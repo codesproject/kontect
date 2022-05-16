@@ -47,7 +47,7 @@ const Appbar = () => {
                 color: "inherit",
                 display: "inherit",
               }}
-              to="/"
+              to=""
             >
               <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
               <Typography
@@ -112,14 +112,14 @@ const Appbar = () => {
                 </Box>
               </Menu>
             </Box>
-            <Link
+            <Link to=""
               style={{
                 textDecoration: "none",
                 display: "inherit",
                 color: "inherit",
                 flexGrow: 1,
               }}
-              to="/"
+              
             >
               <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
               <Typography
@@ -147,19 +147,19 @@ const Appbar = () => {
                 display: { xs: "none", md: "flex" },
               }}
             >
-              <Link to="/contact">
+              <Link to="contact">
                 <Button sx={{ color: "white" }}>Contact</Button>
               </Link>
 
-              <Link to="/product">
+              <Link to="product">
                 <Button sx={{ color: "white" }}>Product</Button>
               </Link>
 
-              <Link to="/blog">
+              <Link to="blog">
                 <Button sx={{ color: "white" }}>Blog</Button>
               </Link>
 
-              <Link to="/">
+              <Link to="">
                 <Button sx={{ color: "white" }}>Species</Button>
               </Link>
             </Box>

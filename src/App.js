@@ -12,7 +12,7 @@ function App(props) {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Appbar />}>
+        <Route path="/kontect" element={<Appbar />}>
           <Route path="" element={<AppNav />} />
           <Route path="product" element={<Product />} />
           <Route path="blog" element={<Blog />} />
