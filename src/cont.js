@@ -14,7 +14,7 @@ function Cont(props) {
   const [Numb, Setnumb] = useState("  A new receipe")
 
   function handleClick() {
-    setClicks ( Numb );
+    setClicks ( Numb + clicks );
   }
 
   return (
