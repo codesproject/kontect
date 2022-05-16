@@ -13,7 +13,7 @@ function App(props) {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Appbar />}>
-          <Route index element={<AppNav />} />
+          <Route path="" element={<AppNav />} />
           <Route path="product" element={<Product />} />
           <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
