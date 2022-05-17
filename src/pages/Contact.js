@@ -1,5 +1,7 @@
-import { Button } from "@mui/material"
+import Button from "@mui/material/Button"
 import { useState } from "react"
+
+import Box from "@mui/material/Box";
 
 const Contact = () => {
     const [val, setVal] = useState("Add")
@@ -7,10 +9,10 @@ const Contact = () => {
         setVal("Value Added")
     }
     return (
-        <div>
+        <Box sx={{ m: "auto", maxWidth:'xl', p:3 }}>
             <h2>This is the Contact page</h2>
             <Button variant="outlined" onClick={handleBtn}>{val}</Button>
-        </div>
+        </Box>
 
     )
 }

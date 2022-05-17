@@ -1,8 +1,10 @@
-function Product() {
+import Box from "@mui/material/Box"
+
+const Product = () => {
     return (
-        <div>
+        <Box sx={{ m: "auto", maxWidth:'xl', p:3 }}>
             <h2>This is the Product page</h2>
-        </div>
+        </Box>
 
     )
 }

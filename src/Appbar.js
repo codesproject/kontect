@@ -101,14 +101,14 @@ const Appbar = () => {
               >
                 <Box sx={{minWidth: 105, px: 1}}>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to="/contact">  Contact </Link>
+                  <Link to="contact">  Contact </Link>
                 </MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to="/product">Product</Link></MenuItem>
+                  <Link to="product">Product</Link></MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to='/blog'>Blogs</Link></MenuItem>
+                  <Link to='blog'>Blogs</Link></MenuItem>
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to='/'>Species</Link></MenuItem>
+                  <Link to=''>Species</Link></MenuItem>
                 </Box>
               </Menu>
             </Box>

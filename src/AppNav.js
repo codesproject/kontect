@@ -7,8 +7,7 @@ import Grid from "@mui/material/Grid";
 
 function AppNav(props) {
   return (
-    <div>
-    
+    <>
       <Box
         maxWidth="xl"
         sx={{
@@ -18,20 +17,20 @@ function AppNav(props) {
             flexDirection: "column",
             alignItems: "center",
           },
-          m: "auto",
+          m: "auto", p: 2
         }}
       >
         <h2>My React App is Online at Github. </h2>
         <Grid
           container
-          spacing={2}
+          rowSpacing={3} columnSpacing={3}
           sx={{
-            margin: "auto",
+            marginTop: "0",
             justifyContent: "center",
             display: { sm: "flex", md: "flex" },
           }}
         >
-          <Grid item xs={4}>
+          <Grid item sm={6} md={4} >
             <Cont
               btn01="ADD"
               btnColor="success"
@@ -41,7 +40,7 @@ function AppNav(props) {
               MContent={props.ModalContHandler1}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item sm={6} md={4}>
             <Cont
               btn01="edit"
               btnColor="warning"
@@ -51,7 +50,7 @@ function AppNav(props) {
               MContent={props.ModalContHandler2}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item sm={6} md={4}>
             <Cont
               btn01="share"
               btnColor="info"
@@ -63,7 +62,7 @@ function AppNav(props) {
           </Grid>
         </Grid>
       </Box>
-    </div>
+    </>
   );
 }
 

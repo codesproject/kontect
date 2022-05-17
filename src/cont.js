@@ -18,7 +18,7 @@ function Cont(props) {
   }
 
   return (
-    <Card sx={{ maxWidth: 375 }}>
+    <Card sx={{ maxWidth: 425, m: 'auto' }}>
       <CardMedia component="img" height="140" image={img} alt="green iguana" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
