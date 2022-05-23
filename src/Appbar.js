@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import MenuList from '@mui/material/MenuList';
+import MenuList from "@mui/material/MenuList";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
@@ -16,20 +16,18 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import InventoryIcon from '@mui/icons-material/Inventory';
+import AddCardIcon from "@mui/icons-material/AddCard";
 
-import ContactMailIcon from '@mui/icons-material/ContactMail';
+import CenterFocusWeakIcon from "@mui/icons-material/CenterFocusWeak";
 
 import { styled } from "@mui/material/styles";
 import Badge from "@mui/material/Badge";
 
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
+import LibraryAddCheckIcon from '@mui/icons-material/LibraryAddCheck';
+import SettingsIcon from '@mui/icons-material/Settings';
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/Inbox";
-import DraftsIcon from "@mui/icons-material/Drafts";
+
 
 import AvatImage from "./images/2.jpg";
 
@@ -145,25 +143,19 @@ const Appbar = () => {
                 onClose={handleCloseNavMenu}
               >
                 <Box sx={{ minWidth: 115, px: 1 }}>
-                <MenuList>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                  <ListItemIcon>
-                      <ContactMailIcon fontSize="medium" />
-                  </ListItemIcon>
-                    <Link to="contact"> Contact </Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                  <ListItemIcon>
-                      <InventoryIcon fontSize="medium" />
-                  </ListItemIcon>
-                    <Link to="product">Product</Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Link to="blog">Blogs</Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Link to="">Species</Link>
-                  </MenuItem>
+                  <MenuList>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Link to="contact"> Contact </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Link to="product">Product</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Link to="blog">Blogs</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Link to="">Species</Link>
+                    </MenuItem>
                   </MenuList>
                 </Box>
               </Menu>
@@ -233,7 +225,7 @@ const Appbar = () => {
                 </IconButton>
               </Tooltip>
               <Menu
-                sx={{ mt: "45px", width:'100%', p: 2 }}
+                sx={{ mt: "45px" }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
@@ -248,27 +240,34 @@ const Appbar = () => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                <Box sx={{  width: 120, p: 0, m: 0 }}>
-                <nav>
-                  <List>
-                    <ListItem disablePadding>
-                      <ListItemButton>
-                        <ListItemIcon style={{ minWidth: 30}}>
-                          <InboxIcon fontSize="small"  />
-                        </ListItemIcon >
-                        <ListItemText primary="Inbox" />
-                      </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                      <ListItemButton>
-                        <ListItemIcon style={{ minWidth: 30}}>
-                          <DraftsIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Drafts" />
-                      </ListItemButton>
-                    </ListItem>
-                  </List>
-                </nav>
+                <Box sx={{ width: 135 }}>
+                  <MenuList>
+                    <MenuItem>
+                      <ListItemIcon>
+                        <AddCardIcon fontSize="small" />
+                      </ListItemIcon>
+                      Inbox
+                    </MenuItem>
+                    <MenuItem>
+                      <ListItemIcon>
+                        <CenterFocusWeakIcon fontSize="small" />
+                      </ListItemIcon>
+                      Drafts
+                    </MenuItem>
+                    <MenuItem>
+                      <ListItemIcon>
+                        <LibraryAddCheckIcon  fontSize="small" />
+                      </ListItemIcon>
+                      Profile
+                    </MenuItem>
+                    <MenuItem>
+                      <ListItemIcon>
+                        <SettingsIcon fontSize="small" />
+                      </ListItemIcon>
+                      <Typography >Settings</Typography>
+                      
+                    </MenuItem>
+                  </MenuList>
                 </Box>
               </Menu>
             </Box>
