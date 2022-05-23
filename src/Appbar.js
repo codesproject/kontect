@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
+import MenuList from '@mui/material/MenuList';
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
@@ -15,8 +16,53 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import InventoryIcon from '@mui/icons-material/Inventory';
+
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+
+import { styled } from "@mui/material/styles";
+import Badge from "@mui/material/Badge";
+
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/Inbox";
+import DraftsIcon from "@mui/icons-material/Drafts";
+
+import AvatImage from "./images/2.jpg";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    backgroundColor: "#44b700",
+    color: "#44b700",
+    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
+    "&::after": {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      borderRadius: "50%",
+      animation: "ripple 1.2s infinite ease-in-out",
+      border: "1px solid currentColor",
+      content: '""',
+    },
+  },
+  "@keyframes ripple": {
+    "0%": {
+      transform: "scale(.8)",
+      opacity: 1,
+    },
+    "100%": {
+      transform: "scale(3.4)",
+      opacity: 0,
+    },
+  },
+}));
 
 const Appbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -97,29 +143,39 @@ const Appbar = () => {
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
-               
               >
-                <Box sx={{minWidth: 105, px: 1}}>
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to="contact">  Contact </Link>
-                </MenuItem>
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to="product">Product</Link></MenuItem>
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to='blog'>Blogs</Link></MenuItem>
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Link to=''>Species</Link></MenuItem>
+                <Box sx={{ minWidth: 115, px: 1 }}>
+                <MenuList>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                  <ListItemIcon>
+                      <ContactMailIcon fontSize="medium" />
+                  </ListItemIcon>
+                    <Link to="contact"> Contact </Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                  <ListItemIcon>
+                      <InventoryIcon fontSize="medium" />
+                  </ListItemIcon>
+                    <Link to="product">Product</Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Link to="blog">Blogs</Link>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Link to="">Species</Link>
+                  </MenuItem>
+                  </MenuList>
                 </Box>
               </Menu>
             </Box>
-            <Link to=""
+            <Link
+              to=""
               style={{
                 textDecoration: "none",
                 display: "inherit",
                 color: "inherit",
                 flexGrow: 1,
               }}
-              
             >
               <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
               <Typography
@@ -167,11 +223,17 @@ const Appbar = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <StyledBadge
+                    overlap="circular"
+                    anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                    variant="dot"
+                  >
+                    <Avatar alt="Remy" src={AvatImage} />
+                  </StyledBadge>
                 </IconButton>
               </Tooltip>
               <Menu
-                sx={{ mt: "45px" }}
+                sx={{ mt: "45px", width:'100%', p: 2 }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
@@ -186,11 +248,28 @@ const Appbar = () => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
+                <Box sx={{  width: 120, p: 0, m: 0 }}>
+                <nav>
+                  <List>
+                    <ListItem disablePadding>
+                      <ListItemButton>
+                        <ListItemIcon style={{ minWidth: 30}}>
+                          <InboxIcon fontSize="small"  />
+                        </ListItemIcon >
+                        <ListItemText primary="Inbox" />
+                      </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
+                      <ListItemButton>
+                        <ListItemIcon style={{ minWidth: 30}}>
+                          <DraftsIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Drafts" />
+                      </ListItemButton>
+                    </ListItem>
+                  </List>
+                </nav>
+                </Box>
               </Menu>
             </Box>
           </Toolbar>
@@ -199,6 +278,6 @@ const Appbar = () => {
       <Outlet />
     </>
   );
-}
+};
 
 export default Appbar;
